@@ -15,6 +15,7 @@ ENV PATH=$DEST/$VERSION/bin:$PATH
 ENV MANPATH=$DEST/$VERSION/share/man:$MANPATH
 
 RUN yum install -y zlib zlib-devel openssl openssl-devel readline readline-devel ; \
+    yum clean all ; \
     curl -L -o $APP_NAME-$VERSION.tar.gz https://cache.ruby-lang.org/pub/ruby/2.3/$APP_NAME-$VERSION.tar.gz ; \
     tar xvf $APP_NAME-$VERSION.tar.gz ; \
     cd $APP_NAME-$VERSION ; \
